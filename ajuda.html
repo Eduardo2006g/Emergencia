@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiauJuda</title>
+    <link rel="stylesheet" href="ajuteste.css">
+    <link rel="stylesheet" href="assets/css/utils.css">
+</head>
+<body>
+    <div class="container">
+    <!-- HEADER -->
+    <header>
+        <!-- LOGO -->
+        <div class="logo">
+            <img id="logoss" src="assets/img/logofundoremovido.png">
+        </div>
+        <input type="checkbox" id="nav_check" hidden>
+        <!-- NAVBAR -->
+        <nav>
+            <ul>
+                <!-- ITENS DA NAVBAR -->
+                <li>
+                    <a href="index.html">Início</a>
+                </li>
+                <li>
+                    <a href="ajuda.html">Ajuda</a>
+                </li>
+                <li>
+                    <a href="blog.html">Blog</a>
+				</li>
+                <li>
+                    <a href="validar.html" id="user_txt">Entrar</a>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <input type="radio" name="theme" id="cad_adocao">
+                        <input type="radio" name="theme" id="cad_perdido">
+                        <input type="checkbox" id="checkbox">
+                        <label for="checkbox" class="cad_button">Cadastrar</label>
+                        <div class="dropdown_list_container">
+                            <ul class="dropdown_list">
+                                <li>
+                                    <label for="cad_adocao"><a href="validar.html">Animal Adoção</a></label>
+                                </li>
+                                <li>
+                                    <label for="cad_perdido"><a href="validar.html">Animal Perdido</a></label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- NAVBAR RESPONSIVA -->
+        <label for="nav_check" class="mn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+
+        <main>
+            <section class="lost-pets">
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="todos">TODOS</button>
+                    <button class="tab-button" data-tab="caes">CÃES</button>
+                    <button class="tab-button" data-tab="gatos">GATOS</button>
+                </div>
+                <div id="petList" class="pet-list">
+                    <!-- Pet cards will be dynamically inserted here -->
+                </div>
+                <div class="pagination">
+                    <!-- Pagination buttons will be dynamically inserted here -->
+                </div>
+            </section>
+        </main>
+
+        <div class="floating-button" id="addPetButton">+</div>
+
+
+            </div>
+        </footer>
+    </div>
+
+    <div id="helpModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Como Ajudar</h2>
+            <p>Se você encontrou um animal em situação de vulnerabilidade, siga estes passos:</p>
+            <ol>
+                <li>Garanta a segurança do animal e a sua própria</li>
+                <li>Verifique se o animal está ferido ou precisa de cuidados imediatos</li>
+                <li>Tente localizar o dono, se possível</li>
+                <li>Entre em contato com as autoridades locais ou uma organização de resgate animal</li>
+                <li>Forneça abrigo temporário, se possível, até que o animal possa ser resgatado</li>
+            </ol>
+            <p>Lembre-se: sua ajuda pode salvar uma vida!</p>
+        </div>
+    </div>
+
+    <div id="addPetModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Cadastrar Novo Pet</h2>
+            <form id="addPetForm">
+                <div class="form-group">
+                    <label for="petName">Nome do Pet:</label>
+                    <input type="text" id="petName" name="petName" required>
+                </div>
+                <div class="form-group">
+                    <label for="petType">Tipo:</label>
+                    <select id="petType" name="petType" required>
+                        <option value="dog">Cão</option>
+                        <option value="cat">Gato</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="petLocation">Localização:</label>
+                    <input type="text" id="petLocation" name="petLocation" required>
+                </div>
+                <div class="form-group">
+                    <label for="petImage">URL da Imagem:</label>
+                    <input type="url" id="petImage" name="petImage" required>
+                </div>
+                <button type="submit" class="submit-button">Cadastrar Pet</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="petDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="petDetailsName"></h2>
+            <img id="petDetailsImage" src="" alt="Pet Image" class="pet-details-image">
+            <p id="petDetailsLocation"></p>
+            <p id="petDetailsType"></p>
+            <button id="deletePetButton" class="delete-button">Excluir Pet</button>
+        </div>
+    </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer">
+                <!-- DIREITO AUTORAL -->
+                <h3>&copy Todos Direitos Reservados</h3>
+            </div>
+        </footer>
+
+    <script src="ajuteste.js"></script>
+</body>
+</html>
